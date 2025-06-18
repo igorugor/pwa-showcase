@@ -40,6 +40,7 @@ function App() {
 			setStatus('✅ Registered successfully.');
 		} catch (err) {
 			console.error(err);
+			alert(err);
 			setStatus('❌ Registration failed.');
 		}
 	};
@@ -75,6 +76,7 @@ function App() {
 			}
 		} catch (err) {
 			console.error(err);
+			alert(err);
 			setStatus('❌ Login error.');
 		}
 	};
@@ -107,6 +109,7 @@ function App() {
 			<h1>PWA Showcase</h1>
 			<div className="card">
 				<div className="inputs">
+					<span>Status: {status}</span>
 					<button onClick={register}>Register</button>
 					<button onClick={login}>Login</button>
 					<button onClick={logout}>Logout</button>
