@@ -21,7 +21,7 @@ export const LoginPage: React.FC = () => {
 			<h1>PWA Showcase</h1>
 			<div className="card">
 				<div className="inputs">
-					{(!auth?.status || status === 'Error') && <button onClick={auth?.register}>Register</button>}
+					{(!auth?.status || auth?.status === 'Error') && <button onClick={auth?.register}>Register</button>}
 					{auth?.status === 'registered' && <button onClick={auth?.login}>Login</button>}
 				</div>
 			</div>

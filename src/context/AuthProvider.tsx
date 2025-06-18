@@ -9,8 +9,6 @@ export const AuthProvider: React.FC<{
 }> = ({ children }) => {
 	const [status, setStatus] = useState<TLoginStatus | null>(null);
 
-	console.log(status);
-
 	const generateChallenge = () => Uint8Array.from(crypto.getRandomValues(new Uint8Array(32)));
 
 	const register = async () => {
@@ -89,7 +87,7 @@ export const AuthProvider: React.FC<{
 
 	const logout = () => {
 		localStorage.removeItem(credentialLocalStorage);
-		setStatus('registered');
+		setStatus(null);
 	};
 
 	useEffect(() => {
