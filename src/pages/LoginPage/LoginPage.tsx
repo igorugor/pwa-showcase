@@ -87,7 +87,7 @@ export const LoginPage: React.FC = () => {
 
 	const logout = () => {
 		localStorage.removeItem(credentialLocalStorage);
-		setStatus(null);
+		setStatus('registered');
 	};
 
 	useEffect(() => {
