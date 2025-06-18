@@ -4,11 +4,14 @@ import './index.css';
 import App from './App.tsx';
 
 import { registerSW } from 'virtual:pwa-register';
+import { AuthProvider } from './context/AuthProvider.tsx';
 
 registerSW({ immediate: true });
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
-		<App />
+		<AuthProvider>
+			<App />
+		</AuthProvider>
 	</StrictMode>
 );
