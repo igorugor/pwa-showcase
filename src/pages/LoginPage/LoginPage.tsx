@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import reactLogo from '../../assets/react.svg';
 import viteLogo from '/vite.svg';
@@ -89,6 +89,13 @@ export const LoginPage: React.FC = () => {
 		localStorage.removeItem(credentialLocalStorage);
 		setStatus(null);
 	};
+
+	useEffect(() => {
+		const credential = localStorage.getItem(credentialLocalStorage);
+		if (credential) {
+			setStatus('registered');
+		}
+	}, []);
 
 	return (
 		<>
